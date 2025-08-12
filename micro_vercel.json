@@ -1,0 +1,9 @@
+{
+  "builds": [
+    { "src": "public/**/*", "use": "@vercel/static" }
+  ],
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/", "destination": "/index.html", "permanent": true }
+  ]
+}
