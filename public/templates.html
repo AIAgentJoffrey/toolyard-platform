@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Templates | ToolYard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">ToolYard</h1>
+      <nav class="space-x-4">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="create.html" class="hover:underline">Create</a>
+        <a href="projects.html" class="hover:underline">My Projects</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container mx-auto px-4 py-8">
+    <h2 class="text-3xl font-bold mb-4">Templates</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="templateList">
+      <!-- Templates will be inserted here by JS -->
+    </div>
+  </main>
+  <script>
+    const templates = [
+      { slug: 'landing-page', title: 'Landing Page', description: 'A simple landing page template' },
+      { slug: 'checklist', title: 'Checklist', description: 'Create a helpful checklist' },
+      { slug: 'mini-guide', title: 'Mini Guide', description: 'Write a mini guide in minutes' }
+    ];
+    const list = document.getElementById('templateList');
+    templates.forEach(t => {
+      const card = document.createElement('a');
+      card.href = `template.html?slug=${t.slug}`;
+      card.className = 'block border p-4 rounded shadow hover:bg-gray-100';
+      card.innerHTML = `<h3 class=\"font-bold mb-2\">${t.title}</h3><p class=\"text-sm text-gray-600\">${t.description}</p>`;
+      list.appendChild(card);
+    });
+  </script>
+</body>
+</html>
