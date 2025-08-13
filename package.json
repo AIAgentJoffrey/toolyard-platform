@@ -1,9 +1,0 @@
-{
-  "name": "toolyard-platform",
-  "version": "0.1.0",
-  "scripts": {
-    "postinstall": "rm -rf public && unzip -o microapp.zip && mv -f microapp public",
-    "build": "echo 'static site'"
-  },
-  "dependencies": {}
-}
